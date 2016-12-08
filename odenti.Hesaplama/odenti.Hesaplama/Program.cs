@@ -31,19 +31,19 @@ namespace odenti.Hesaplama
             Console.Write("\nToplam Banka Kesintisini Giriniz\t:");
             double kesinti = Convert.ToDouble(Console.ReadLine());
 
-            double tom = ((IlcePayi / 64 * 100));
+            double tom = ((IlcePayi + kesinti) * 100 / 64 );
             double GPayi = (tom * 20 / 100);
-            double IPayi = ((tom - GPayi) * 20 / 100);
+            double IPayi = (tom * 16 / 100);
             double tum = (GPayi + IPayi);
-            double tomg = (GPayi + IPayi + IlcePayi + kesinti);
 
 
             Console.WriteLine("\nGenel Merkez Payi\t\t\t:{0} TL", GPayi);
             Console.WriteLine("\nİl Merkezi Payi\t\t\t\t:{0} TL", IPayi);
             Console.WriteLine("\nToplam Üst Örgüt Miktarı\t\t:{0} TL", tum);
-            Console.WriteLine("\nToplam Ödenti Miktarı\t\t\t:{0} TL", tomg);
+            Console.WriteLine("\nToplam Ödenti Miktarı\t\t\t:{0} TL", tom);
 
             Console.ReadKey();
+            
 
         }
     }
