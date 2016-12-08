@@ -20,21 +20,21 @@ namespace odentiHesaplamaFormAplication
         private void button1_Click(object sender, EventArgs e)
         {
 
-            double ilcePayi, bankaKesintisi, gmPayi, ilPayi, tom, gtom, tum;
+            double ilcePayi, bankaKesintisi, gmPayi, ilPayi, tom, gtom, ktom, tum;
 
             ilcePayi = Convert.ToDouble(textBox1.Text);
             bankaKesintisi = Convert.ToDouble(textBox2.Text);
 
-            tom = (ilcePayi * 100) / 64;
+            tom = ((ilcePayi+bankaKesintisi) * 100) / 64;
             gmPayi = (tom * 20) / 100;
             ilPayi = (tom * 16) / 100;
             tum = (gmPayi + ilPayi);
-            gtom = tom + bankaKesintisi;
+            
 
             textBox3.Text = gmPayi.ToString();
             textBox4.Text = ilPayi.ToString();
             textBox5.Text = tum.ToString();
-            textBox6.Text = gtom.ToString();
+            textBox6.Text = tom.ToString();
             panel1.Visible = true;
         }
 
